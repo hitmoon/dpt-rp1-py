@@ -7,7 +7,8 @@ fi
 
 
 addr=$1
-cmd=$2
+shift
+cmd=$@
 
 dptrp1 --client-id ~/deviceid.dat --key ~/privatekey.dat --addr "$addr" $cmd
 
