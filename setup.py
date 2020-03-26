@@ -46,6 +46,7 @@ setuptools.setup(
     author_email=", ".join(SETUP_JSON['emails']),
     description=SETUP_JSON['description'],
     long_description=readme(),
+    long_description_content_type='text/markdown',
     license=SETUP_JSON['license'],
     keywords="",
     url=None,
@@ -54,8 +55,7 @@ setuptools.setup(
     install_requires=SETUP_JSON['install_requires'],
     tests_require=['pytest'],
     cmdclass={'test': PyTest},
-    scripts=[os.path.join('bin', x) for x in
-             SETUP_JSON['scripts']],
+    entry_points=SETUP_JSON['entry_points'],
     classifiers=SETUP_JSON['classifiers'],
     include_package_data=True,
     zip_safe=False,
